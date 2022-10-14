@@ -11,6 +11,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import space.arkady.wolfensteintracksplayer.R
 import space.arkady.wolfensteintracksplayer.exoplayer.MusicServiceConnection
+import space.arkady.wolfensteintracksplayer.presentation.adapters.SwipeSongAdapter
 import javax.inject.Singleton
 
 @Module
@@ -22,8 +23,8 @@ object AppModule {
     fun provideGlideInstance(@ApplicationContext context: Context) =
         Glide.with(context).setDefaultRequestOptions(
             RequestOptions()
-                .placeholder(R.drawable.ic_image)
-                .error(R.drawable.ic_image)
+                .placeholder(R.drawable.ic_wolfenstein)
+                .error(R.drawable.ic_wolfenstein)
                 .diskCacheStrategy(
                     DiskCacheStrategy.DATA
                 )
@@ -33,4 +34,8 @@ object AppModule {
     @Singleton
     fun provideMusicServiceConnection(@ApplicationContext context: Context) =
         MusicServiceConnection(context)
+
+    @Provides
+    @Singleton
+    fun provideSwipeSongAdapter() = SwipeSongAdapter()
 }

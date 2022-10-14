@@ -8,4 +8,10 @@
         android:id="@+id/homeFragment"
         android:name="space.arkady.wolfensteintracksplayer.presentation.fragments.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/songFragment"
+        android:name="space.arkady.wolfensteintracksplayer.presentation.fragments.SongFragment"
+        android:label="SongFragment" />
+    <action android:id="@+id/globalActionToSongFragment"
+        app:destination="@id/songFragment"/>
 </navigation>

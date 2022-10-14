@@ -19,10 +19,6 @@ object ServiceModule {
 
     @ServiceScoped
     @Provides
-    fun provideMusicDatabase() = MusicDatabase()
-
-    @ServiceScoped
-    @Provides
     fun provideAudioAttributes() =
         AudioAttributes.Builder()
             .setContentType(C.AUDIO_CONTENT_TYPE_MUSIC)
@@ -43,5 +39,7 @@ object ServiceModule {
         @ApplicationContext context: Context
     ) = DefaultDataSource.Factory(context)
 
-
+    @ServiceScoped
+    @Provides
+    fun provideMusicDatabase() = MusicDatabase()
 }
